@@ -82,9 +82,11 @@
   font-weight: var(--medium);
 }
 
-.card {
- margin-top: 30px;
+card {
+  margin-top: 5px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #FDAD3E 0%, #FE4F8E 47.4%, #C64FBB 100%);
   & .progress{
     font-size: 30px;
   }
-}
