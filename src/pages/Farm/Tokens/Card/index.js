@@ -100,7 +100,7 @@ const Card = ({bank, src, title}) => {
                     </div>
 
 
-                    {approveStatus === ApprovalState.APPROVED ? (
+                    {approveStatus !== ApprovalState.APPROVED ? (
                         <div className={classNames(styles.item)}>
                             <div className={styles.button}>
                                 <Button
