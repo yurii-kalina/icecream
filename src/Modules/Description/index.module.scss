@@ -12,8 +12,7 @@ $blur: 5px;
     bottom: 0;
     right: var(--grid-outher-fluid);
     left: var(--grid-outher-fluid);
-    //background: var(--description-background);
-    background: linear-gradient(180deg, rgba(191, 191, 191, 0) 0%, rgba(191, 191, 191, 0.5) 18.44%, rgba(191, 191, 191, 0.95) 50.52%, rgba(191, 191, 191, 0.5) 80.81%, rgba(191, 191, 191, 0) 100%);
+    background: var(--description-background);
     z-index: -1;
     content: '';
   }
