@@ -1,4 +1,4 @@
-import React, {useMemo} from "react";
+import React, {useMemo, useState} from "react";
 import classNames from "classnames";
 
 import styles from './index.module.scss';
@@ -50,7 +50,8 @@ const CardStake = () => {
     const canWithdrawFromMasonry = useWithdrawCheck();
 
 
-
+    const [depositModal, setDepositModal] = useState(false)
+    const [withdrawModal, setWithdrawModal] = useState(false)
     return (
         <div className={classNames('gradient-background', styles.block)}>
             <div className={styles.wrapper}>
@@ -82,14 +83,16 @@ const CardStake = () => {
                                         type={'button'}
                                         placeholder={'+'}
                                         classname={'primary'}
-                                        action={()=>dispatch(setDepositModalData(true))}
+                                        action={()=> setDepositModal(true)}
+
                                     />
                                     <Button
                                         type={'button'}
                                         placeholder={'-'}
                                         classname={'primary'}
                                         disabled={!canWithdrawFromMasonry}
-                                        action={()=>dispatch(setWithdrawModalData(true))}
+                                        action={()=> setWithdrawModal(true)}
+
                                     />
                                 </div>
                             )}
@@ -112,6 +115,8 @@ const CardStake = () => {
                             onStake(value);
                         }}
                         tokenName={'CSHARE'}
+                        open={depositModal}
+                        handleClose={() => setDepositModal(false)}
             />
             <WithDrawModal
                 max={stakedBalance}
@@ -119,6 +124,8 @@ const CardStake = () => {
                             onWithdraw(value);
                         }}
                         tokenName={'CSHARE'}
+                open={withdrawModal}
+                handleClose={() => setWithdrawModal(false)}
             />
         </div>
     );

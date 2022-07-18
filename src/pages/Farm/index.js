@@ -11,7 +11,6 @@ import {useWallet} from "use-wallet";
 import Bank from "../Bank";
 import {Route, useRouteMatch} from "react-router-dom";
 
-// import styles from './index.module.scss';
 
 const Farm = () => {
     const {path} = useRouteMatch();
